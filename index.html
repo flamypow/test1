@@ -10,6 +10,7 @@
 <button type = "button" id = "buttonten"> 10 </button>
 <button type = "button" id = "buttontwenty"> 20 </button>
 <button type = "button" id = "buttonthirty"> 30 </button>
+
 <div class = "out"></div>
 <script>
 	let APIKEY = "3WHSqYyUrdicuNNeOZ9LHFfZnwJCcrK7"
@@ -32,7 +33,7 @@
 			img.src = content.data[0].images.downsized.url;
 			img.alt = content.data[0].title;
 			let out = document.querySelector('.out');
-			out.appendChild(img);
+			out.insertAdjacentElement("afterbegin", fig);
 			document.querySelector('queryone').value = "";
 			})
 			.catch(err=>
