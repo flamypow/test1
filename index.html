@@ -13,7 +13,6 @@
 
 <div class = "out" id = "out"></div>
 <script>
-	let APIKEY = "3WHSqYyUrdicuNNeOZ9LHFfZnwJCcrK7"
 	document.addEventListener("DOMContentLoaded", init);
 	function init(){
 		document.getElementById("submit").addEventListener("click", ev => {
@@ -32,6 +31,12 @@
 				console.log("META", content.meta);
 				for (let i = 0; i < 30; i++) {
 				let img = document.createElement("img");
+				if(i<11)
+				{img.class = "pone";}
+				else if(i<21)
+				{img.class = "ptwo";}
+				else if(i<31)
+				{img.class = "pthree";}
 				img.src = content.data[i].images.downsized.url;
 				img.alt = content.data[i].title;
 				out.insertAdjacentElement("beforeend", img);
