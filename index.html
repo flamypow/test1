@@ -10,7 +10,7 @@
 <button type = "button" id = "buttonten"> 10 </button>
 <button type = "button" id = "buttontwenty"> 20 </button>
 <button type = "button" id = "buttonthirty"> 30 </button>
-
+<br>
 <div class = "out" id = "out"></div>
 <script>
 	document.addEventListener("DOMContentLoaded", init);
@@ -61,7 +61,7 @@
 		document.getElementById("buttontwenty").addEventListener("click", ctwo=>{
 			for (let i=0; i < 20; i++)
 				{	
-					document.getElementById(""+i).style.display = "block";
+					document.getElementById(""+i).style.display = "";
 				}
 			for (let i=20; i < 30; i++)
 				{	
@@ -71,7 +71,7 @@
 		document.getElementById("buttonthirty").addEventListener("click", cthree=>{
 			for (let i=0; i < 30; i++)
 				{	
-					document.getElementById(""+i).style.display = "block";
+					document.getElementById(""+i).style.display = "";
 				}
 		});
 		
