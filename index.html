@@ -14,6 +14,8 @@
 <div class = "out" id = "out"></div>
 <script>
 	document.addEventListener("DOMContentLoaded", init);
+	var onetotwo;
+	var twotothree;
 	function init(){
 		document.getElementById("submit").addEventListener("click", ev => {
 			ev.preventDefault();
@@ -43,15 +45,23 @@
 				} 
 				
 				document.querySelector('queryone').value = "";
-				document.getElementsByClassName('ptwo').style.display = 'none';
-				document.getElementsByClassName('pthree').style.display = 'none';
+				
+				onetotwo = document.getElementsByClassName('ptwo');
+				for (let i=0; i < onetotwo.length; i++)
+				{	
+					onetotwo[i].style.display = 'none';
+				}
+				twotothree = document.getElementsByClassName('pthree');
+				for (let i=0; i < twotothree.length; i++)
+				{	
+					onetotwo[i].style.display = 'none';
+				}
+				
 				})
 				.catch(err=>
 				{
 					console.error(err);
 				});
-				
-		
 		});
 	
 	}
