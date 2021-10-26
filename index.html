@@ -18,25 +18,24 @@
 	function init(){
 		document.getElementById("submit").addEventListener("click", ev => {
 			ev.preventDefault();
-			let url = 'https://api.giphy.com/v1/gifs/search?api_key=3WHSqYyUrdicuNNeOZ9LHFfZnwJCcrK7&limit=1&q=';
+			let url = 'https://api.giphy.com/v1/gifs/search?api_key=3WHSqYyUrdicuNNeOZ9LHFfZnwJCcrK7&limit=30&q=';
 			let str = document.getElementById('queryone').value.trim();
 			url = url.concat(str);
 			fetch(url)
 				.then(response => response.json())
 				.then(content => {
+				
+				let out = document.querySelector('.out');
 				console.log(content.data);
 				console.log("META", content.meta);
-				 //let fig = document.createElement("figure");
-				  let img = document.createElement("img");
-				 // let fc = document.createElement("figcaption");
-				  img.src = content.data[0].images.downsized.url;
-				  img.alt = content.data[0].title;
-				 // fc.textContent = content.data[0].title;
-				  //fig.appendChild(img);
-				 // fig.appendChild(fc);
-				let out = document.querySelector('.out');
+				for (let i = 0; i < 30; i++) {
+				let img = document.createElement("img");
+				img.src = content.data[i].images.downsized.url;
+				img.alt = content.data[i].title;
 				out.insertAdjacentElement("afterbegin", img);
-				//document.querySelector('queryone').value = "";
+				} 
+				
+				document.querySelector('queryone').value = "";
 				})
 				.catch(err=>
 				{
