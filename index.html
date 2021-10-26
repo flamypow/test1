@@ -11,7 +11,7 @@
 <button type = "button" id = "buttontwenty"> 20 </button>
 <button type = "button" id = "buttonthirty"> 30 </button>
 
-<div class = "out"></div>
+<div class = "out" id = "out"></div>
 <script>
 	let APIKEY = "3WHSqYyUrdicuNNeOZ9LHFfZnwJCcrK7"
 	document.addEventListener("DOMContentLoaded", init);
@@ -26,13 +26,15 @@
 				.then(content => {
 				
 				let out = document.querySelector('.out');
+				document.getElementById('out').innerHTML = '';
+				
 				console.log(content.data);
 				console.log("META", content.meta);
 				for (let i = 0; i < 30; i++) {
 				let img = document.createElement("img");
 				img.src = content.data[i].images.downsized.url;
 				img.alt = content.data[i].title;
-				out.insertAdjacentElement("afterbegin", img);
+				out.insertAdjacentElement("beforeend", img);
 				} 
 				
 				document.querySelector('queryone').value = "";
